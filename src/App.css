@@ -1,0 +1,115 @@
+.table {
+    margin: 16px;
+}
+
+.game {
+    background-color: white;
+    margin: auto;
+    width: 50%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #efefef;
+    box-shadow: /* The top layer shadow */ 0 1px 1px rgba(0, 0, 0, 0.15),
+        /* The second layer */ 0 10px 0 -5px #eee,
+        /* The second layer shadow */ 0 10px 1px -4px rgba(0, 0, 0, 0.15),
+        /* The third layer */ 0 20px 0 -10px #eee,
+        /* The third layer shadow */ 0 20px 1px -9px rgba(0, 0, 0, 0.15);
+    padding: 0 30px;
+}
+
+.choose {
+    display: flex;
+    align-items: center;
+}
+
+.choose p {
+    margin: 8px;
+}
+
+.big {
+    font-size: 54px;
+    transition: all .13s;
+}
+
+.big select {
+    font-size: 36px;
+    margin: 0 8px;
+}
+
+.small {
+    transition: all .13s;
+}
+
+.winner {
+    font-size: 36px;
+}
+
+.step {
+    font-size: 26px;
+}
+
+.button {
+    border-radius: 0.25rem;
+    background: #1990ff;
+    color: white;
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.2;
+    max-height: 2rem;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem;
+    cursor: pointer;
+}
+
+.big .button {
+    font-size: 2rem;
+    max-height: 3rem;
+}
+
+.no-display {
+    display: none;
+}
+
+.row {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.cell {
+    height: 60px;
+    width: 60px;
+    background-color: #1990ff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    line-height: 45px;
+}
+
+.white {
+    height: 45px;
+    width: 45px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.red {
+    height: 45px;
+    width: 45px;
+    background-color: #ff7e79;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.yellow {
+    height: 45px;
+    width: 45px;
+    background-color: #fff482;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
