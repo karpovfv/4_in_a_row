@@ -1,11 +1,24 @@
 import React from 'react';
 import Game from './Game/Game';
-import './App.css';
+import './Game/Game.css';
+import Hello from "./Hello/Hello";
+import GameOver from "./GameOver/GameOver";
+import NotFound from "./404";
+
+import {HashRouter, Route, Switch} from 'react-router-dom';
 
 class App extends React.Component {
     render() {
         return (
-            <Game/>
+            <HashRouter>
+                <Switch>
+                    <Route path="/" exact component={Hello}/>
+                    <Route path="/game" component={Game}/>
+                    <Route path="/game_over" component={GameOver}/>
+                    <Route path='/hello' render={(props) => <Helloa props={...props}/>}/>
+                    <Route component={NotFound}/>
+                </Switch>
+            </HashRouter>
         );
     }
 }

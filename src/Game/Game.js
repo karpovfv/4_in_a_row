@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Header from "../Header/Header";
+import Welcome from "../Welcome/Welcome";
+import {Redirect} from 'react-router-dom';
 import Row from "../Row/Row";
 
 class Game extends Component {
@@ -16,13 +17,13 @@ class Game extends Component {
             isGameEnd: true,
         };
 
-        this.makeMove = this.makeMove.bind(this);
+        // this.makeMove = this.makeMove.bind(this);
         this.startGame = this.startGame.bind(this);
         this.newGame = this.newGame.bind(this);
         this.handleChoose = this.handleChoose.bind(this);
     };
 
-    makeMove(column) {
+    makeMove = (column) => {
         if (!this.state.isGameEnd) {
             const newField = [...this.state.field];
             const newPlayer = this.state.currentPlayer === 1 ? 2 : 1;
@@ -166,9 +167,19 @@ class Game extends Component {
     };
 
     render() {
+        const fromSTP = this.props.location.state && this.props.location.state.fromStartPage;
+        if (this.state.isGameEnd && this.state.winner) {
+            return <Redirect to={{
+                pathname: '/game_over',
+                state: {
+                    winner: this.state.winner,
+                }
+            }}/>
+        }
         return (
             <div className="game">
-                <Header
+                { !fromSTP && <Redirect to='/'/> }
+                <Welcome
                     data={this.state}
                     startGame={this.startGame}
                     newGame={this.newGame}

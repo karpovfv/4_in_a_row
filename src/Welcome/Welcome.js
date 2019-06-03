@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Header(props) {
+function Welcome(props) {
     let chooseClass = 'choose';
     if (!props.data.isGameEnd || props.data.winner || props.data.currentPlayer) {
         chooseClass += ' no-display';
@@ -32,4 +32,4 @@ function Header(props) {
     )
 }
 
-export default Header
+export default Welcome
