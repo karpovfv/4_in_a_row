@@ -15,7 +15,6 @@ class App extends React.Component {
                     <Route path="/" exact component={Hello}/>
                     <Route path="/game" component={Game}/>
                     <Route path="/game_over" component={GameOver}/>
-                    <Route path='/hello' render={(props) => <Helloa props={...props}/>}/>
                     <Route component={NotFound}/>
                 </Switch>
             </HashRouter>
